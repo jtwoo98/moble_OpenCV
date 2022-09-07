@@ -10,12 +10,15 @@ frame_size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),
               int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 print('frame_size =', frame_size)
 
+img = cv2.imread('./data/lena.jpg')
+rows, cols, channels = img.shape
 while True:   
     retval, frame = cap.read()
     if not retval:
         break
-
-    cv2.imshow('frame',frame)
+    resize_img = cv2.resize(img, (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))
+    c = cv2.add(frame,resize_img)
+    cv2.imshow('frame',c)
     
     key = cv2.waitKey(25)
     if key == 27: # Esc
