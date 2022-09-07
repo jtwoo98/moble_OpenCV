@@ -2,7 +2,7 @@
 import cv2
  
 src = cv2.imread('./data/lena.jpg', cv2.IMREAD_GRAYSCALE)
-rects = cv2.selectROIs('src', src, False, True)
+rects = cv2.selectROIs('src', src, True, True)
 print('rects =', rects)
 
 for r in rects:

@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 
-imageFile = './data/lena.jpg'
+imageFile = './data/guang.jpg'
 img  = cv2.imread(imageFile)    # cv2.IMREAD_COLOR
 img2 = cv2.imread(imageFile, 0) # cv2.IMREAD_GRAYSCALE
 
